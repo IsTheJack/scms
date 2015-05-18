@@ -11,14 +11,14 @@ class Migration_Tabela_idioma extends CI_Migration {
 	public function up() {
 
 		$query = "	CREATE TABLE IF NOT EXISTS `idioma` (
-					`id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-					`nome` VARCHAR(45) NOT NULL,
-					`icone` VARCHAR(256) NULL,
-					`principal` VARCHAR(45) NOT NULL DEFAULT 0,
-					PRIMARY KEY (`id`),
-					UNIQUE INDEX `nome_UNIQUE` (`nome` ASC))
+					  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+					  `nome` VARCHAR(45) NOT NULL,
+					  `icone` VARCHAR(256) NULL,
+					  `principal` VARCHAR(45) NOT NULL DEFAULT 0,
+					  PRIMARY KEY (`id`),
+					  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC))
 					ENGINE = InnoDB
-					DEFAULT CHARACTER SET = utf8	";
+					DEFAULT CHARACTER SET = utf8;	";
 		$this->db->query($query);
 
 		// Inserindo o idioma português como idioma principal

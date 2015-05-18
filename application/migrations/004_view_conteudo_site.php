@@ -12,11 +12,10 @@ class Migration_View_conteudo_site extends CI_Migration {
 		
 		$query = "	CREATE  OR REPLACE VIEW `conteudo_site` AS
 					SELECT pg.id AS pagina_id, pg.ordem, pgi.idioma_id, pgi.bloqueado,
-					pgi.nome, pgi.titulo, pgi.conteudo, pgi.slug, seo.title, 
+					pgi.nome, pgi.titulo, pgi.conteudo, seo.slug, seo.title, 
 					seo.description, seo.keywords, seo.robots FROM pagina pg 
 					INNER JOIN pagina_idioma pgi ON pg.id = pgi.pagina_id
 					INNER JOIN dadosSEO seo ON pgi.dadosSEO_id = seo.id	";
-
 		$this->db->query($query);
 	}
 
