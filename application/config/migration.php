@@ -21,7 +21,7 @@ $config['migration_enabled'] = TRUE;
 | be upgraded / downgraded to.
 |
 */
-$config['migration_version'] = 4; // Não migrar para versões menores que a 3
+$config['migration_version'] = 5; // Não migrar para versões menores que a 3
 
 
 /*
