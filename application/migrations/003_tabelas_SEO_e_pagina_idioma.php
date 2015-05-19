@@ -31,14 +31,12 @@ class Migration_Tabelas_SEO_e_pagina_idioma extends CI_Migration {
 					  `dadosSEO_id` INT UNSIGNED NOT NULL,
 					  `nome` VARCHAR(45) NOT NULL,
 					  `titulo` VARCHAR(255) NULL,
-					  `slug` VARCHAR(255) NOT NULL,
 					  `conteudo` TEXT NULL,
 					  `bloqueado` TINYINT(1) NOT NULL DEFAULT 0,
 					  INDEX `fk_pagina_has_idioma_idioma1_idx` (`idioma_id` ASC),
 					  INDEX `fk_pagina_has_idioma_pagina_idx` (`pagina_id` ASC),
 					  INDEX `fk_pagina_has_idioma_dadosSEO1_idx` (`dadosSEO_id` ASC),
 					  PRIMARY KEY (`id`),
-					  UNIQUE INDEX `slug_UNIQUE` (`slug` ASC),
 					  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC),
 					  CONSTRAINT `fk_pagina_has_idioma_pagina`
 					    FOREIGN KEY (`pagina_id`)
