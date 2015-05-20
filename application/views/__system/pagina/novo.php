@@ -23,17 +23,20 @@
 			</div>
 		</div>
 
-		<!-- Campos para o SEO -->
+		<!-- Campos para o SEO e idioma -->
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 			<div class="form-group">
-				<label for="slug">Slug</label>
+				<label for="slug">Slug *</label>
 				<input class="form-control" name="slug" type="text">
 			</div>
 
 			<div class="form-group">
 				<label for="robots">Robots</label>
 				<select class="form-control" name="robots" id="#robots">
-					<option value="index/follow">index/follow</option>
+					<option value="index, follow">Indexar / Seguir</option>
+					<option value="index, nofollow">Indexar / Não Seguir</option>
+					<option value="noindex, follow">Não Indexar / Seguir</option>
+					<option value="noindex, nofollow">Não Indexar / Não Seguir</option>
 				</select>
 			</div>
 
@@ -44,17 +47,21 @@
 					<option value="nao" selected="selected">Não</option>
 				</select>
 			</div>
+
+			<div class="form-group">
+				<label for="bloqueado">Idioma</label>
+				<select class="form-control" name="bloqueado" id="#bloqueado">
+					<option value="pt-br">Português</option>
+					<option value="en">English</option>
+				</select>
+			</div>
 		</div>
 
 		<!-- Editor -->
 		<div class="col-xs-12">
 			<div class="form-group">
 				<label for="conteudo">Conteúdo da Página</label>
-				<div class="form-group">
-                    <textarea id="editor" name="editor" rows="10" cols="80">
-                        This is my textarea to be replaced with CKEditor.
-                    </textarea>                        
-				</div>
+                <textarea class="form-control" id="ckeditor" name="ckeditor" rows="10" cols="80"></textarea>                        
 			</div>
 		</div>
 
