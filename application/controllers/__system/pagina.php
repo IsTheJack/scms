@@ -30,8 +30,26 @@ class Pagina extends CI_Controller {
 	{
 		$data['modulo_titulo'] = $this->moduloTitulo;
 		$data['acao_titulo'] = 'Nova Página';
-		$data['conteudo'] = $this->load->view('__system/pagina/new', NULL, TRUE);
+		$data['conteudo'] = $this->load->view('__system/pagina/novo', NULL, TRUE);
 		loadTema(TRUE, $data);
+	}
+
+	public function criar()
+	{
+		$nome = $this->input->post('nome');
+		$titulo = $this->input->post('titulo');
+		$description = $this->input->post('description');
+
+		$slug = $this->input->post('slug');
+		$robots = $this->input->post('robots');
+		$bloqueado = $this->input->post('bloqueado');
+
+		$conteudo = $this->input->post('conteudo');
+
+		$pagina = new AR_Pagina();
+		$pagina->nome = $nome;
+		$pagina->titulo = $titulo;
+		$pagina->description = $description;
 	}
 }
 
