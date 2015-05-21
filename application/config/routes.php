@@ -41,13 +41,9 @@
 $route['default_controller'] = "site/getpagina";
 $route['404_override'] = '';
 
-$route['(:any)'] = 'site/getpagina/$1';
+$route['([^__system][^/]+)'] = 'site/getpagina/$1';
 $route['__migrate'] = 'migrate/index';
 $route['__system'] = 'sistema/index';
-
-$route['__system/pagina'] = '__system/pagina';
-$route['__system/pagina/novo'] = '__system/pagina/novo';
-$route['__system/pagina/criar'] = '__system/pagina/criar';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
