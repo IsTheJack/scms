@@ -14,6 +14,7 @@
 
     <!-- Main content -->
     <section class="content">
+        <?php if (isset($html_msg)) echo $html_msg; ?>
         <?php echo $conteudo; ?>
     </section><!-- /.content -->
 </aside><!-- /.right-side -->
