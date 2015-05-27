@@ -16,10 +16,11 @@ class Pagina extends CI_Controller
 	public function index()
 	{
 		require_once APPPATH . 'ar_model/ar_conteudo_site.php';
+		$content_data['html_msg'] = $this->session->flashdata('html_msg');
 		$data['modulo_titulo'] = $this->moduloTitulo;
 		$data['acao_titulo'] = 'Tela geral de páginas.';
-		$data['paginas'] = AR_Conteudo_site::find('all', array('select' => 'nome, ordem, slug', 'order' => 'ordem'));
-		$data['conteudo'] = $this->load->view('__system/pagina/index', $data, TRUE);
+		$content_data['paginas'] = AR_Conteudo_site::find('all', array('select' => 'nome, ordem, slug', 'order' => 'ordem'));
+		$data['conteudo'] = $this->load->view('__system/pagina/index', $content_data, TRUE);
 		loadTema(TRUE, $data);
 	}
 
@@ -67,7 +68,13 @@ class Pagina extends CI_Controller
 			// $pagina_idioma = new AR_Pagina_idioma($atributos['pagina_idioma']);
 			// $pagina_idioma->save();
 
-			$this->session->set_flashdata('sucesso', 'Página cadastrada com sucesso!');
+			$html_msg = '<div class="alert alert-success alert-dismissable">
+                                    <i class="fa fa-check"></i>
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <b>Parabéns!</b> A Página foi criada com sucesso!
+                                </div>';
+
+			$this->session->set_flashdata('html_msg', $html_msg);
 
 			redirect('__system/pagina');
 		}
